@@ -12,6 +12,8 @@ public interface EmployeRepository extends JpaRepository<Employe, Long> {
     @Query("select max(substring(matricule,2)) from Employe")
     String findLastMatricule();
 
+    String banane = "banane";
+    
     Employe findByMatricule(String matricule);
 
     @Query("select avg(performance) from Employe where SUBSTRING(matricule,0,1) = ?1 ")
